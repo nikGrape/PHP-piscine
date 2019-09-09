@@ -1,0 +1,71 @@
+table{
+	text-align: center;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+.elem{
+	transition: 0.5s all;
+}
+.elem:hover{
+	transform: scale(1.5);
+	border: 1px solid black;
+}
+.nonmetals{
+	background-color: #9e95c7;
+}
+.gas{
+	background-color: #84b9d7;
+}
+.gas:hover{
+	box-shadow: -5px 33px 40px #D8DBE2;
+}
+.metaloid{
+	background-color: #f0f9c1;
+}
+.alcali-metals{
+	background-color: #a3dac9;
+}
+.halogens{
+	background-color: #feecb9;
+}
+.post-tr-metals{
+	 background-color: #fecda0;
+}
+.post-tr-metals:hover{
+	transform: matrix(2, -0.3, 0, 2, 0, 0);
+}
+.alcaline{
+	background-color: #cdebc8;
+}
+.metals{
+	background-color: #f8a78e;
+}
+
+.lanthanoids{
+	background-color: #e68b96;
+}
+.lanthanoids:hover{
+	transform: skew(15deg, 10deg) scale(1.5);
+}
+.actinoids{
+	background-color: #c5678e;
+}
+.actinoids:hover{
+	transform: rotate(720deg) scale(1.5);
+}
+#gold:hover
+{
+	transform: scale(2.0);
+	background-color: gold;
+}
+
+
+
+
+/*th{
+	transition: 1s all;
+	transition-timing-function: 0.5s;
+}
+th:hover{
+	transform: scale(1.5) rotate(720deg);
+}
