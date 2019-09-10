@@ -1,5 +1,6 @@
 body{
 	text-align: center;
+	background-color: #4d5463;
 }
 table{
 	text-align: center;
@@ -7,7 +8,7 @@ table{
 	width: 95%;
 }
 h1{
-	color: gray;
+	color: #dbded1;
 	font-size: 3vw;
 }
 div{
@@ -19,14 +20,15 @@ p{
 #photo{
 	height: 20%;
 	width: 20%;
+	border: 2px solid #262625;
 }
 .elem{
 	transition: 0.5s all;
-	font-size: 1vw; 	###added for changeing size###
+	font-size: 1vw;
+	border: 1px solid black;
 }
 .elem:hover{
 	transform: scale(1.5);
-	border: 1px solid black;
 }
 .nonmetals{
 	background-color: #9e95c7;
