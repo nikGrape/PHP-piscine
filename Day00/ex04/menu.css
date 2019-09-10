@@ -1,0 +1,38 @@
+li{
+	color: white;
+	text-align: center;
+	padding: 16px;
+	float: left;
+}
+li:hover{
+	background-color: black;
+}
+.menu{
+	list-style-type: none; delite dots;
+	overflow: hidden;
+	background-color: #333333;
+}
+.submenu{
+	list-style-type: none;
+	overflow: hidden;
+	background-color: #333322;
+	width: 7%;
+	float: center;
+	text-align: left;
+	display: block;
+	position: absolute;
+	padding: 0;
+	background-color: white;
+	margin-top: 2%;
+	margin-left: -1%;
+}
+.type > .dish:hover{
+	background-color: black;
+}
+ul.menu > li:hover > ul.submenu {
+    display: block;
+}
+	text-decoration: none;
+	display: block;
+		margin: 0;
+	padding: 0;

@@ -1,10 +1,28 @@
+body{
+	text-align: center;
+}
 table{
 	text-align: center;
-	margin-left: 30px;
-	margin-right: 30px;
+	margin: 3%;
+	width: 95%;
+}
+h1{
+	color: gray;
+	font-size: 3vw;
+}
+div{
+	text-align: center;
+}
+p{
+	font-size: 2vw;
+}
+#photo{
+	height: 20%;
+	width: 20%;
 }
 .elem{
 	transition: 0.5s all;
+	font-size: 1vw; 	###added for changeing size###
 }
 .elem:hover{
 	transform: scale(1.5);
@@ -58,14 +76,18 @@ table{
 	transform: scale(2.0);
 	background-color: gold;
 }
-
-
-
-
-/*th{
-	transition: 1s all;
-	transition-timing-function: 0.5s;
+.mass{
+	text-align: right;
+	font-size: 70%;
 }
-th:hover{
-	transform: scale(1.5) rotate(720deg);
+.num{
+	text-align: left;
+	font-size: 70%;
+}
+.L{
+	font-size: 200%;
+	font-weight: bold;
+}
+.name{
+	font-size: 70%;
 }
