@@ -1,8 +1,8 @@
 #!/usr/bin/env php
 <?php
 	$words = array();
-	for ($i = 1; $argv[$i]; $i++)
-		$words = array_merge($words, ft_split($argv[$i]));
+	foreach ($argv as $ar)
+		$words = array_merge($words, ft_split($ar));
 	usort($words, "my_sort");
 	groups_print($words);
 
@@ -13,27 +13,30 @@
 
 	function groups_print($words)
 	{
-		for ($i = 0; $words[$i]; $i++)
+		foreach ($words as $word)
 		{
-			if (ctype_alpha($words[$i][0]))
-				echo($words[$i] . "\n");
+			if (ctype_alpha($word[0]))
+				echo($word . "\n");
 		}
-		for ($i = 0; $words[$i]; $i++)
+		foreach ($words as $word)
 		{
-			if (ctype_digit($words[$i][0]))
-				echo($words[$i] . "\n");
+			if (ctype_digit($word[0]))
+				echo($word . "\n");
 		}
-		for ($i = 0; $words[$i]; $i++)
+		foreach ($words as $word)
 		{
-			if (!ctype_digit($words[$i][0]) and !ctype_alpha($words[$i][0]))
-				echo($words[$i] . "\n");
+			if (!ctype_digit($word[0]) and !ctype_alpha($word[0]))
+				echo($word . "\n");
 		}
 	}
 
 	function ft_split($str)
 	{
+		$res = array();
 		$words = explode(" ", $str);
-		$words = array_diff($words, array(''));
-		return($words);
+		foreach($words as $word)
+			if ($word != '')
+				array_push($res, $word);
+		return($res);
 	}
 ?>

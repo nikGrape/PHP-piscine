@@ -8,10 +8,13 @@
 		echo($word . "\n");
 
 
-	function ft_split($str)
-	{
-		$words = explode(" ", $str);
-		$words = array_diff($words, array(''));
-		return($words);
-	}
+		function ft_split($str)
+		{
+			$res = array();
+			$words = explode(" ", $str);
+			foreach($words as $word)
+				if ($word != '')
+					array_push($res, $word);
+			return($res);
+		}
 ?>
