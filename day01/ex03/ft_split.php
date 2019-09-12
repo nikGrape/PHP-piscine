@@ -1,4 +1,9 @@
 #!/usr/bin/env php
 <?php
-	print_r(split(" ", "hello world   AAA"));
+	function ft_split($str)
+	{
+		$words = split(" +", $str);
+		sort($words);
+		return($words);
+	}
 ?>
