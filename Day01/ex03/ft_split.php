@@ -2,8 +2,12 @@
 <?php
 	function ft_split($str)
 	{
-		$words = split(" +", $str);
-		sort($words);
-		return($words);
+		$res = array();
+		$words = explode(" ", $str);
+		foreach ($words as $word)
+			if ($word != "")
+				array_push($res, $word);
+		sort($res);
+		return($res);
 	}
 ?>
