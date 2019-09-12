@@ -2,12 +2,9 @@
 <?php
 	function ft_split($str)
 	{
-		$res = array();
 		$words = explode(" ", $str);
-		foreach ($words as $word)
-			if ($word != "")
-				array_push($res, $word);
-		sort($res);
-		return($res);
+		$words = array_diff($words, array(''));
+		sort($words);
+		return($words);
 	}
 ?>
