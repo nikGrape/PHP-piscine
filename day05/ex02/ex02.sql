@@ -1,4 +1,4 @@
-insert into ft_table (`login`, `group`, `cteation_date`)
+insert into ft_table (`login`, `group`, `creation_date`)
     values 
         ('loki', 1, '2013-05-01'),
         ('scadoux', 2, '2014-01-01'),
