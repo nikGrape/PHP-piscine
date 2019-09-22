@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#bal {
+	background-color: red;
+	margin: auto;
+	margin-top: 300px;
+	display: block;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	var size = 200;
+	var	margintop = 300;
+	var colors = ["red", "green", "blue"];
+	var color_nbr = 0;
+
+	$(document).ready(function() {
+		$('#bal').click(make_bigger);
+		$('#bal').mouseleave(make_smaller);
+	})
+	function make_bigger() {
+		if (size > 420) {
+			margintop = 300;
+			size = 200;
+		}
+		else {
+			size += 10;
+			margintop -= 5;
+		}
+		if (color_nbr < 2) {
+			color_nbr++;
+		}
+		else {
+			color_nbr = 0;
+		}
+		$('#bal').css('backgroundColor', colors[color_nbr]);
+		$('#bal').css('marginTop', margintop);
+		$('#bal').css('width', size);
+		$('#bal').css('height', size);
+	}
+	function make_smaller() {
+		if (size > 200) {
+			size -= 5;
+			margintop += 2.5;
+			if (color_nbr > 0) {
+				color_nbr--;
+			}
+			else {
+				color_nbr = 2;
+			}
+			$('#bal').css('backgroundColor', colors[color_nbr]);
+			$('#bal').css('marginTop', margintop);
+			$('#bal').css('width', size);
+			$('#bal').css('height', size);
+		}
+	}
+</script>
+</head>
+	<body>
+		<div id="bal"></div>
+	</body>
+</html>

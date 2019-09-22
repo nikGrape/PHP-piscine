@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	body {
+		background-color: rgb(245, 244, 168);
+	}
+	#block{
+		margin-left: 44%;
+		margin-top: 10%;
+		float: left;
+		margin-right: 5%;
+		size: 50%;
+	}
+	#select{
+		margin-left: 40px;
+		margin: 15px;
+		height: 30px;
+		font-size: 20px;
+		box-shadow: 4px 4px 8px gray;
+	}
+	#second{
+		text-align: center;
+		width: 100px;
+		height: 30px;
+		font-size: 20px;
+		box-shadow: 4px 4px 8px gray;
+	}
+	#first{
+		width: 100px;
+		height: 30px;
+		font-size: 20px;
+		text-align: center;
+		box-shadow: 4px 4px 8px gray;
+	}
+	#submit{
+		background-color: rgb(236, 108, 108);
+		margin-top: 32px;
+		margin-left: 32%;
+		text-align: center;
+		display: block;
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		font-size: 20px;
+		box-shadow: 4px 4px 8px gray;
+	}
+</style>
+<script>
+	window.onload = function() {
+		setTimeout(beg, 30000);
+	}
+	function beg() {
+		alert('Please, use me...');
+		setTimeout(beg, 30000);
+	}
+	function calculate(form) {
+		var select = form.elements["select"].value;
+		var first = form.elements["first"].value;
+		var second = form.elements["second"].value;
+		if (!isInt(first) || !isInt(second)) {
+			alert('Error :(');
+		}
+		else {
+			first = parseInt(first, 10);
+			second = parseInt(second, 10);
+			if (first < 0 || second < 0) {
+				alert('Error :(');
+			}
+			else {
+				if (select == "+") {
+					output(first + second);
+				}
+				else if (select == "-") {
+					output(first - second);
+				}
+				else if (select == "*") {
+					output(first * second);
+				}
+				else if (select == "/") {
+					if (second == 0) {
+						output('It’s over 9000!');
+					}
+					else {
+						output(first / second);
+					}
+				}
+				else if (select == "%") {
+					if (second == 0) {
+						output('It’s over 9000!');
+					}
+					else {
+						output(first % second);
+					}
+				}
+			}
+		}
+	}
+	function isInt(value) {
+		return (!isNaN(value) && parseInt(Number(value)) == value && !isNaN(parseInt(value, 10)));
+	}
+	function output(value) {
+		console.log(value);
+		alert(value);
+	}
+
+</script>
+</head>
+<body>
+	<div id="block">
+		<form onsubmit="calculate(this)">
+			<input id="first" type="text">
+
+				<select name="select" id="select">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+					<option value="%">%</option>
+				</select>
+
+			<input id="second" type="text">
+			<button id="submit" name="submit" value="OK">Try me!</button>
+		</form>
+	</div>
+</body>
+</html>

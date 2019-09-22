@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#bal {
+	background-color: red;
+	margin: auto;
+	margin-top: 300px;
+	display: block;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+</style>
+<script>
+	var size = 200;
+	var	margintop = 300;
+	var colors = ["red", "green", "blue"];
+	var color_nbr = 0;
+
+	function make_bigger(balloon) {
+		if (size > 420) {
+			margintop = 300;
+			size = 200;
+		}
+		else {
+			size += 10;
+			margintop -= 5;
+		}
+		if (color_nbr < 2) {
+			color_nbr++;
+		}
+		else {
+			color_nbr = 0;
+		}
+		balloon.style.backgroundColor = colors[color_nbr];
+		balloon.style.marginTop = margintop + 'px';
+		balloon.style.width = size + 'px';
+		balloon.style.height = size + 'px';
+	}
+	function make_smaller(balloon) {
+		if (size > 200) {
+			size -= 5;
+			margintop += 2.5;
+			if (color_nbr > 0) {
+				color_nbr--;
+			}
+			else {
+				color_nbr = 2;
+			}
+			balloon.style.backgroundColor = colors[color_nbr];
+			balloon.style.marginTop = margintop + 'px';
+			balloon.style.width = size + 'px';
+			balloon.style.height = size + 'px';
+		}
+	}
+</script>
+</head>
+	<body>
+		<div id="bal" onclick="make_bigger(this)" onmouseover="make_smaller(this)"></div>
+	</body>
+</html>
