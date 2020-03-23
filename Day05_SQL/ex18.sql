@@ -9,5 +9,6 @@ SELECT name, id_distrib FROM distrib
 			(id_distrib >= 62 AND id_distrib <= 69) OR
 			id_distrib = 71 OR
 			(id_distrib >= 88 AND id_distrib <= 90) OR
-			name LIKE '%y%y%' OR name LIKE '%Y%Y%'
+			length(name) - length(replace(name, 'y', '')) = 2 OR
+			length(name) - length(replace(name, 'Y', '')) = 2;
 			LIMIT 2, 5;
